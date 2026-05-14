@@ -1,0 +1,470 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background:
+    linear-gradient(rgba(255, 255, 255, .12), rgba(255, 255, 255, .12)),
+    url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1600&q=80");
+  background-size: cover;
+  background-position: center;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  backdrop-filter: blur(14px);
+  background: rgba(255, 255, 255, .10);
+  z-index: -1;
+}
+
+.page {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+}
+
+/* MAIN CARD */
+
+.auth-container {
+  display: grid;
+  grid-template-columns: 54% 46%;
+  width: 100%;
+  max-width: 820px;
+  min-height: 540px;
+  height: auto;
+  background: #fff;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, .16);
+  z-index: 10;
+  transition: none !important;
+}
+
+/* LEFT SIDE */
+
+.form-side {
+  background: #fffef6;
+  padding: 30px 40px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* BRAND */
+
+.brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 35px;
+  width: 100%;
+}
+
+.brand-logo,
+.brand-logo::before,
+.brand-logo::after,
+.brand-lines {
+  display: none;
+}
+
+.brand-logo-img {
+  width: 45px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 5px 10px rgba(77, 140, 40, .28));
+}
+
+.brand h2 {
+  font-size: 24px;
+  font-weight: 800;
+  color: #111;
+  letter-spacing: -0.5px;
+}
+
+.brand h2 span {
+  color: #67a63f;
+}
+
+/* TITLE */
+
+.form-side h1 {
+  font-size: 32px;
+  line-height: 1.2;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  color: #666;
+  font-size: 13px;
+  line-height: 1.5;
+  margin-bottom: 24px;
+}
+
+.subtitle span {
+  color: #67a63f;
+  font-weight: 600;
+}
+
+/* FORM */
+
+form {
+  width: 100%;
+  max-width: 340px;
+}
+
+.input-box {
+  width: 100%;
+  height: 44px;
+  border: 1.4px solid #e0ded6;
+  border-radius: 13px;
+  position: relative;
+  margin-bottom: 12px;
+  background: #fffef9;
+}
+
+.input-box input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 0 46px;
+  font-size: 13px;
+  color: #111;
+}
+
+.input-box input::placeholder {
+  color: #9b9b9b;
+}
+
+.input-box i {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #969696;
+  font-size: 15px;
+}
+
+.left-icon {
+  left: 18px;
+}
+
+.right-icon {
+  right: 18px;
+}
+
+.forgot {
+  display: block;
+  text-align: right;
+  margin: 0 4px 16px 0;
+  color: #111;
+  text-decoration: none;
+  font-size: 11.5px;
+  font-weight: 600;
+}
+
+.login-btn {
+  width: 100%;
+  height: 44px;
+  border: none;
+  border-radius: 13px;
+  background: linear-gradient(135deg, #45851f, #1d5012);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 9px 18px rgba(35, 76, 22, .18);
+}
+
+.divider {
+  width: 100%;
+  max-width: 340px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 22px 0 18px;
+}
+
+.divider span {
+  flex: 1;
+  height: 1px;
+  background: #e2dfd8;
+}
+
+.divider p {
+  margin: 0;
+  color: #444;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+/* SOCIALS */
+
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.socials button {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 1px solid #e8e4dc;
+  background: #fff;
+  cursor: pointer;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 5px 14px rgba(0, 0, 0, .07);
+}
+
+/* accurate google icon */
+.google i {
+  display: none;
+}
+
+.google::before {
+  content: "";
+  width: 26px;
+  height: 26px;
+  background: url("https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg") center/contain no-repeat;
+  display: block;
+}
+
+.apple i {
+  color: #000;
+}
+
+.facebook {
+  background: #1877F2 !important;
+  border-color: #1877F2 !important;
+}
+
+.facebook i {
+  color: #fff;
+}
+
+.bottom-text {
+  margin-top: 16px;
+  font-size: 12.5px;
+  color: #555;
+}
+
+.bottom-text a {
+  color: #67a63f;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.right-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 20% center;
+  display: block;
+  transition: none;
+}
+
+/* Siguraduhin din natin na ang image-side ay sakto ang laki */
+.image-side {
+  position: relative;
+  overflow: hidden;
+  background-color: #f8f8f8;
+}
+
+.image-side::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, .08) 55%,
+      rgba(0, 0, 0, .62) 100%);
+  z-index: 2;
+}
+
+.image-overlay,
+.desk,
+.mockup-screen,
+.mockup-screen::after,
+.screen-sidebar,
+.mini-logo,
+.screen-sidebar span,
+.screen-content,
+.screen-content p,
+.task-panel,
+.progress-panel,
+.circle,
+.chart-panel,
+.lamp,
+.plant,
+.cup,
+.notebook {
+  display: none !important;
+}
+
+/* TEXT OVER IMAGE */
+
+.caption {
+  position: absolute;
+  left: 42px;
+  bottom: 50px;
+  color: #fff;
+  z-index: 6;
+}
+
+.caption h2 {
+  font-size: 20px;
+  line-height: 1.2;
+  font-weight: 800;
+  margin-bottom: 5px;
+}
+
+.caption p {
+  font-size: 15px;
+}
+
+.caption span {
+  color: #7bbe45;
+  font-weight: 700;
+}
+
+.slider {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 6;
+}
+
+.slider span {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .45);
+}
+
+.slider .active {
+  background: #7bbe45;
+}
+
+/* SIGNUP FIX */
+
+.signup-main {
+  margin-top: 4px;
+}
+
+.signup-bottom {
+  margin-top: 14px;
+}
+
+/* --- UPDATED MINIMALIST & FUNCTIONAL SIGNUP --- */
+
+
+
+/* Siguraduhin na ang body ay hindi nagkakaroon ng scrollbar dahil sa absolute position */
+body {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-side {
+  padding: 40px 45px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Compact spacing para sa maraming fields */
+.input-box {
+  margin-bottom: 8px;
+  width: 100%;
+  height: 40px;
+}
+
+.input-box input {
+  padding: 0 42px;
+  font-size: 13px;
+}
+
+.divider {
+  margin: 12px 0 8px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Google Icon Positioning */
+.socials {
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Link sa pinakababa */
+.bottom-text {
+  margin-top: 5px;
+  font-size: 13px;
+  color: #555;
+}
+
+.bottom-text a {
+  color: #67a63f;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.bottom-text a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Fix */
+@media (max-width: 768px) {
+  .auth-container {
+    grid-template-columns: 1fr;
+    max-width: 380px;
+    height: auto;
+    padding-bottom: 20px;
+  }
+
+  .image-side {
+    display: none;
+  }
+
+  .form-side {
+    padding: 30px 24px;
+  }
+
+
+}
